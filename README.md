@@ -40,7 +40,7 @@ final class NotificationService: NativePushNotificationService {}
 
 - [Native Push](https://github.com/Native-Push/native_push): The main Flutter library
 - [Native Push Client](https://github.com/Native-Push/native_push_client): The Flutter library to be used with `Native Push Server`
-- [Native Push Server](https://github.com/Native-Push/native_push_server): The server which can be used a a microservices and a
+- [Native Push Server](https://github.com/Native-Push/native_push_server): The server which can be used as a microservices and a
   library which can be used for an own server.
 - [Native Push Vapid](https://github.com/Native-Push/native_push_vapid): The library which should be used to generate Vapid Keys if
   web is a supported platform.
