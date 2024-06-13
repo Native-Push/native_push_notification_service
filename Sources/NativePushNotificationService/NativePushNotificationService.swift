@@ -18,11 +18,9 @@ open class NativePushNotificationService: UNNotificationServiceExtension {
     ///   - contentHandler: The content handler to execute with the modified notification content.
     open override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
-        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        let bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent) ?? UNMutableNotificationContent()
+        self.bestAttemptContent = bestAttemptContent
         
-        guard let bestAttemptContent else {
-            return
-        }
         bestAttemptContent.title = request.content.title
         bestAttemptContent.body = request.content.body
         guard let urlString = bestAttemptContent.userInfo["native_push_image"] as? String else {
